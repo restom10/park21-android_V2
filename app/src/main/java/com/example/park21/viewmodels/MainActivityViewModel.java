@@ -6,33 +6,33 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import com.example.park21.models.NicePlace;
-import com.example.park21.repositories.NicePlaceRepository;
+import com.example.park21.models.Parqueadero;
+import com.example.park21.repositories.ParqueaderoRepository;
 
 import java.util.List;
 
 public class MainActivityViewModel extends ViewModel {
 
-    private MutableLiveData<List<NicePlace>> mNicePlaces;
-    private NicePlaceRepository mRepo;
+    private MutableLiveData<List<Parqueadero>> mNicePlaces;
+    private ParqueaderoRepository mRepo;
     private MutableLiveData<Boolean> mIsUpdating = new MutableLiveData<>();
 
     public void init(){
         if(mNicePlaces != null){
             return;
         }
-        mRepo = NicePlaceRepository.getInstance();
+        mRepo = ParqueaderoRepository.getInstance();
         mNicePlaces = mRepo.getNicePlaces();
     }
 
-    public void addNewValue(final NicePlace nicePlace){
+    public void addNewValue(final Parqueadero nicePlace){
         mIsUpdating.setValue(true);
 
         new AsyncTask<Void, Void, Void>(){
             @Override
             protected void onPostExecute(Void aVoid) {
                 super.onPostExecute(aVoid);
-                List<NicePlace> currentPlaces = mNicePlaces.getValue();
+                List<Parqueadero> currentPlaces = mNicePlaces.getValue();
                 currentPlaces.add(nicePlace);
                 mNicePlaces.postValue(currentPlaces);
                 mIsUpdating.postValue(false);
@@ -51,7 +51,7 @@ public class MainActivityViewModel extends ViewModel {
         }.execute();
     }
 
-    public LiveData<List<NicePlace>> getNicePlaces(){
+    public LiveData<List<Parqueadero>> getNicePlaces(){
         return mNicePlaces;
     }
 

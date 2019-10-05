@@ -1,21 +1,17 @@
 package com.example.park21;
 
 import android.content.Context;
-import android.icu.text.Transliterator;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
-import com.example.park21.models.NicePlace;
+import com.example.park21.models.Parqueadero;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,10 +21,10 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private static final String TAG = "RecyclerViewAdapter";
 
-    private List<NicePlace> mNicePlaces = new ArrayList<>();
+    private List<Parqueadero> mNicePlaces = new ArrayList<>();
     private Context mContext;
 
-    public RecyclerViewAdapter(Context context, List<NicePlace> nicePlaces) {
+    public RecyclerViewAdapter(Context context, List<Parqueadero> nicePlaces) {
         mNicePlaces = nicePlaces;
         mContext = context;
     }
@@ -46,6 +42,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         // Set the name of the 'NicePlace'
         ((ViewHolder)viewHolder).mName.setText(mNicePlaces.get(i).getTitle());
+
+        // Set the number of Parqueaderos
+        ((ViewHolder)viewHolder).mNumeroParq.setText(mNicePlaces.get(i).getNumeroParqueaderos());
 
         // Set the image
         RequestOptions defaultOptions = new RequestOptions()
@@ -65,11 +64,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
         private CircleImageView mImage;
         private TextView mName;
+        private TextView mNumeroParq;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mImage = itemView.findViewById(R.id.image);
             mName = itemView.findViewById(R.id.image_name);
+            mNumeroParq = itemView.findViewById(R.id.parqueaderos);
         }
     }
 }

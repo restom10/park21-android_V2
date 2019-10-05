@@ -13,14 +13,11 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 
-import com.example.park21.models.NicePlace;
+import com.example.park21.models.Parqueadero;
 import com.example.park21.viewmodels.MainActivityViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import java.util.ArrayList;
 import java.util.List;
-
-import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -46,9 +43,9 @@ public class MainActivity extends AppCompatActivity {
 
         mMainActivityViewModel.init();
 
-        mMainActivityViewModel.getNicePlaces().observe(this, new Observer<List<NicePlace>>() {
+        mMainActivityViewModel.getNicePlaces().observe(this, new Observer<List<Parqueadero>>() {
             @Override
-            public void onChanged(@Nullable List<NicePlace> nicePlaces) {
+            public void onChanged(@Nullable List<Parqueadero> nicePlaces) {
                 mAdapter.notifyDataSetChanged();
             }
         });
@@ -71,9 +68,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 mMainActivityViewModel.addNewValue(
-                        new NicePlace(
+                        new Parqueadero(
                                 "https://i.imgur.com/ZcLLrkY.jpg",
-                                "Washington"
+                                "Washington",
+                                "",
+                                "8",
+                                ""
                         )
                 );
             }
