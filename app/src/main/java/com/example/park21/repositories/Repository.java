@@ -2,6 +2,7 @@ package com.example.park21.repositories;
 
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.park21.models.Familia;
 import com.example.park21.models.Parqueadero;
 import com.example.park21.models.Usuario;
 
@@ -11,15 +12,16 @@ import java.util.List;
 /**
  * Singleton pattern
  */
-public class ParqueaderoRepository {
+public class Repository {
 
-    private static ParqueaderoRepository instance;
+    private static Repository instance;
     private ArrayList<Parqueadero> dataSetParqueaderos = new ArrayList<>();
     private Usuario usuario;
+    private Familia familia;
 
-    public static ParqueaderoRepository getInstance(){
+    public static Repository getInstance(){
         if(instance == null){
-            instance = new ParqueaderoRepository();
+            instance = new Repository();
         }
         return instance;
     }
@@ -38,6 +40,22 @@ public class ParqueaderoRepository {
         usuario = new Usuario("Pepo Diaz","1136555582","1654651","skrrsk@pepo.com","52","Masculino");
         MutableLiveData<Usuario> data = new MutableLiveData<>();
         data.setValue(usuario);
+        return data;
+    }
+
+    // Pretend to get data from a webservice or online source
+    public MutableLiveData<Familia> getFamilia(){
+        Usuario usuario1;
+        Usuario usuario2;
+        usuario1 = new Usuario("Martha Diaz","5454654654","25651156","soalal@pepo.com","54","Femenino");
+        usuario2 = new Usuario("Mauro Diaz","54654651","2956515","smaurk@pepo.com","25","Masculino");
+        List<Usuario> listaFamilia = new ArrayList<>();
+        listaFamilia.add(usuario1);
+        listaFamilia.add(usuario2);
+        listaFamilia.add(usuario);
+        familia = new Familia(listaFamilia, "Padre");
+        MutableLiveData<Familia> data = new MutableLiveData<>();
+        data.setValue(familia);
         return data;
     }
 

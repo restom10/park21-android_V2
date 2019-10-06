@@ -7,21 +7,21 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 import com.example.park21.models.Parqueadero;
-import com.example.park21.repositories.ParqueaderoRepository;
+import com.example.park21.repositories.Repository;
 
 import java.util.List;
 
-public class MainActivityViewModel extends ViewModel {
+public class MainActivityParqueaderoViewModel extends ViewModel {
 
     private MutableLiveData<List<Parqueadero>> mNicePlaces;
-    private ParqueaderoRepository mRepo;
+    private Repository mRepo;
     private MutableLiveData<Boolean> mIsUpdating = new MutableLiveData<>();
 
     public void init(){
         if(mNicePlaces != null){
             return;
         }
-        mRepo = ParqueaderoRepository.getInstance();
+        mRepo = Repository.getInstance();
         mNicePlaces = mRepo.getNicePlaces();
     }
 
