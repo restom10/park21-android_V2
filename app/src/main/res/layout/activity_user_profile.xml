@@ -33,7 +33,7 @@
         android:id="@+id/buttonFamilia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/button_edit"
+        android:text="@string/button_familia"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonVerCarros"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -184,4 +184,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_menu" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

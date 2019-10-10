@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
     public static final String EXTRA_MESSAGE = "com.example.Park21.MESSAGE";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.AppTheme);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
