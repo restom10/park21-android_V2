@@ -7,13 +7,17 @@ public class Parqueadero {
     private String nombre;
     private String numeroParqueaderos;
     private String direccion;
+    private String lat;
+    private String longitud;
 
-    public Parqueadero(String imageUrl, String title, String nombre, String numeroParqueaderos, String direccion) {
+    public Parqueadero(String imageUrl, String title, String nombre, String numeroParqueaderos, String direccion, String lat, String longitud) {
         this.title = title;
         this.imageUrl = imageUrl;
         this.nombre = nombre;
         this.numeroParqueaderos = numeroParqueaderos;
         this.direccion = direccion;
+        this.longitud = longitud;
+        this.lat = lat;
     }
 
     public Parqueadero() {
@@ -58,5 +62,22 @@ public class Parqueadero {
 
     public void setDireccion(String direccion) {
         this.direccion = direccion;
+    }
+
+
+    public String getLat() {
+        return lat;
+    }
+
+    public void setLat(String lat) {
+        this.lat = lat;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
     }
 }

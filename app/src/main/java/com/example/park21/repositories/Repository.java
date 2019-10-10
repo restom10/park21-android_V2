@@ -65,7 +65,9 @@ public class Repository {
                         "Unicentro",
                         "",
                         "65",
-                        ""
+                        "",
+                        "4.723271",
+                        "-74.062304"
                 )
         );
         dataSetParqueaderos.add(
@@ -73,49 +75,63 @@ public class Repository {
                         "Hayuelos",
                         "",
                         "54",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://i.redd.it/qn7f9oqu7o501.jpg",
                         "Plaza Claro",
                         "",
                         "84",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://i.redd.it/j6myfqglup501.jpg",
                         "Santafe",
                         "",
                         "78",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://i.redd.it/0h2gm1ix6p501.jpg",
                         "Cedritos",
                         "",
                         "45",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://i.redd.it/k98uzl68eh501.jpg",
                         "Colina",
                         "",
                         "51",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg",
                         "San Rafael",
                         "",
                         "900",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
         dataSetParqueaderos.add(
                 new Parqueadero("https://i.redd.it/obx4zydshg601.jpg",
                         "Centro Mayor",
                         "",
                         "500",
-                        "")
+                        "",
+                        "4.723271",
+                        "-74.062304")
         );
     }
 }

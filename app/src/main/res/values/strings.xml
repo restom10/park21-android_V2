@@ -3,6 +3,8 @@
     <string name="edit_message">Enter message</string>
     <string name="button_send">Send</string>
     <string name="button_maps">Maps</string>
+    <string name="button_edit">Ver mis carros</string>
+    <string name="button_familia">Ver Familia</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
