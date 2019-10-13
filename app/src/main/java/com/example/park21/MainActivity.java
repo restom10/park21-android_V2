@@ -63,6 +63,10 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
+        //TODO revisar si ya esta metido el usuario
+        Intent intent = new Intent(this, LoginActivity.class);
+        startActivity(intent);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 

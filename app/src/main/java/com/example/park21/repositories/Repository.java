@@ -37,7 +37,7 @@ public class Repository {
 
     // Pretend to get data from a webservice or online source
     public MutableLiveData<Usuario> getUsuario(){
-        usuario = new Usuario("Pepo Diaz","1136555582","1654651","skrrsk@pepo.com","52","Masculino");
+        usuario = new Usuario("Pepo Diaz","1136555582","1654651","skrrsk@pepo.com","52","Masculino","https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
         MutableLiveData<Usuario> data = new MutableLiveData<>();
         data.setValue(usuario);
         return data;
@@ -47,8 +47,8 @@ public class Repository {
     public MutableLiveData<Familia> getFamilia(){
         Usuario usuario1;
         Usuario usuario2;
-        usuario1 = new Usuario("Martha Diaz","5454654654","25651156","soalal@pepo.com","54","Femenino");
-        usuario2 = new Usuario("Mauro Diaz","54654651","2956515","smaurk@pepo.com","25","Masculino");
+        usuario1 = new Usuario("Martha Diaz","5454654654","25651156","soalal@pepo.com","54","Femenino", "https://i.redd.it/tpsnoz5bzo501.jpg");
+        usuario2 = new Usuario("Mauro Diaz","54654651","2956515","smaurk@pepo.com","25","Masculino", "https://i.redd.it/j6myfqglup501.jpg");
         List<Usuario> listaFamilia = new ArrayList<>();
         listaFamilia.add(usuario1);
         listaFamilia.add(usuario2);

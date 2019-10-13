@@ -7,18 +7,30 @@ public class Usuario {
     private String correo;
     private String edad;
     private String genero;
+    private String imagen;
 
-    public Usuario(String nombre, String cedula, String telefono, String correo, String edad, String genero) {
+    public Usuario(String nombre, String cedula, String telefono, String correo, String edad, String genero, String imagen) {
         this.nombre = nombre;
         this.cedula = cedula;
         this.telefono = telefono;
         this.correo = correo;
         this.edad = edad;
         this.genero = genero;
+        this.imagen = imagen;
     }
 
     public Usuario() {
     }
+
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
+    }
+
 
     public String getNombre() {
         return nombre;

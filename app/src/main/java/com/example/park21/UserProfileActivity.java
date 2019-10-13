@@ -1,5 +1,6 @@
 package com.example.park21;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LifecycleOwner;
@@ -8,7 +9,10 @@ import androidx.lifecycle.ViewModelProviders;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -24,6 +28,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UserProfileActivity extends AppCompatActivity {
 
     private FloatingActionButton mFab;
+    private Button verFamilia;
+    private Button verCarros;
     private UserProfileActivityViewModel userViewModel;
     private RecyclerViewAdapter mAdapter;
     private EditText nombre;
@@ -41,7 +47,11 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mFab = findViewById(R.id.UserEdit);
+        verFamilia = findViewById(R.id.buttonFamilia);
+        verCarros = findViewById(R.id.buttonVerCarros);
         userViewModel = ViewModelProviders.of(this).get(UserProfileActivityViewModel.class);
         userViewModel.init();
 
@@ -66,6 +76,14 @@ public class UserProfileActivity extends AppCompatActivity {
         edad.setText(userViewModel.getUsuario().getValue().getEdad());
         genero.setText(userViewModel.getUsuario().getValue().getGenero());
 
+        verFamilia.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent = new Intent(UserProfileActivity.this,
+                        FamilyActivity.class);
+                startActivity(myIntent);
+            }
+        });
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -77,6 +95,8 @@ public class UserProfileActivity extends AppCompatActivity {
                 nombre.setEnabled(true);
             }
         });
+
+
 
     }
 
@@ -95,5 +115,20 @@ public class UserProfileActivity extends AppCompatActivity {
         String correoM = nombre.getText().toString();
         String edadM = nombre.getText().toString();
         String generoM = nombre.getText().toString();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
     }
 }
