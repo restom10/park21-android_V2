@@ -5,6 +5,14 @@
     <string name="button_maps">Maps</string>
     <string name="button_edit">Ver mis carros</string>
     <string name="button_familia">Ver Familia</string>
+    <string name="button_ingresar_parqueadero">Generar Código Qr para entrar</string>
+    <string name="button_eliminar_familia">Eliminar Familia</string>
+    <string name="button_llegar_carro">¿Cómo llegar a mi carro?</string>
+    <string name="button_salir_parqueadero">Salir del parqueadero</string>
+    <string name="button_pagar_Parqueadero">Pagar Parqueadero</string>
+    <string name="button_ver_carro">Ver carro en tiempo real</string>
+    <string name="button_seguir_parquear">Seguir a parquear</string>
+    <string name="no_internet">No tienes internet no puedes usar esta funcionalidad.</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->

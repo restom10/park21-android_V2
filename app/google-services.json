@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "916396314863",
+    "firebase_url": "https://park-21.firebaseio.com",
+    "project_id": "park-21",
+    "storage_bucket": "park-21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916396314863:android:183c7ce25bf0209e730b1a",
+        "android_client_info": {
+          "package_name": "com.example.park21"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916396314863-o6noedu5q5fec3p2oct5vrr4oghngtbo.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.park21",
+            "certificate_hash": "874b1ca704f874918cd919e7af216848185416f6"
+          }
+        },
+        {
+          "client_id": "916396314863-qe2j0ii3j011tlkcklkk1oqsg76j78k8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCCqnr10rIY9hjftbNFM1aIFnnlhH1j3g"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916396314863-qe2j0ii3j011tlkcklkk1oqsg76j78k8.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916396314863-ksrfut4ruhf2mc6ekdt22utv3v6br8dl.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "TEAM16-PARK21.Park21"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

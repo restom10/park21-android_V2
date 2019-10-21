@@ -1,10 +1,12 @@
 package com.example.park21;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -53,6 +55,14 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 .setDefaultRequestOptions(defaultOptions)
                 .load(mNicePlaces.get(i).getImageUrl())
                 .into(((ViewHolder)viewHolder).mImage);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(mContext,IngresarParqueaderoActivity.class);
+                mContext.startActivity(a);
+            }
+        });
     }
 
     @Override
