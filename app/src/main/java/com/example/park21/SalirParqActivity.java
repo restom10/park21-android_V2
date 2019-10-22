@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Environment;
 import android.util.Log;
 import android.view.Display;
 import android.view.View;
@@ -14,36 +13,28 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.park21.viewmodels.MainActivityParqueaderoViewModel;
 import com.google.zxing.WriterException;
 
 import androidmads.library.qrgenearator.QRGContents;
 import androidmads.library.qrgenearator.QRGEncoder;
-import androidmads.library.qrgenearator.QRGSaver;
 
-public class IngresarParqueaderoActivity extends AppCompatActivity {
-    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
+public class SalirParqActivity extends AppCompatActivity {
     String TAG = "GenerateQRCode";
     ImageView qrImage;
     Button generar;
-    Button irAParquear;
+    Button irAMain;
     Bitmap bitmap;
     QRGEncoder qrgEncoder;
     String inputValue;
-    String parqEscogido;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ingresar_parqueadero);
-        // Get the Intent that started this activity and extract the string
-        Intent intent = getIntent();
-        parqEscogido = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+        setContentView(R.layout.activity_salir_parq);
 
-        irAParquear = (Button) findViewById(R.id.buttonSeguiraParquear);
-        irAParquear.setEnabled(false);
-        qrImage = (ImageView) findViewById(R.id.QR_Image);
-        generar = (Button) findViewById(R.id.buttonGenerarQr);
+        irAMain = (Button) findViewById(R.id.buttonSeguiraMain);
+        irAMain.setEnabled(false);
+        qrImage = (ImageView) findViewById(R.id.QR_Image_Salir);
+        generar = (Button) findViewById(R.id.buttonGenerarQrSalir);
         generar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -69,19 +60,17 @@ public class IngresarParqueaderoActivity extends AppCompatActivity {
                         Log.v(TAG, e.toString());
                     }
                 }
-                irAParquear.setEnabled(true);
+                irAMain.setEnabled(true);
             }
         });
 
-        irAParquear.setOnClickListener(new View.OnClickListener() {
+        irAMain.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
 
-                Intent myIntent = new Intent(IngresarParqueaderoActivity.this,
-                        ParqueandoActivity.class);
-                myIntent.putExtra(EXTRA_MESSAGE,parqEscogido);
+                Intent myIntent = new Intent(SalirParqActivity.this,
+                        MainActivity.class);
                 startActivity(myIntent);
             }
         });
-
     }
 }

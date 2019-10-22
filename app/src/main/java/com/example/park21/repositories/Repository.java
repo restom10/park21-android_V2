@@ -1,10 +1,21 @@
 package com.example.park21.repositories;
 
+import android.util.Log;
+
+import androidx.annotation.NonNull;
 import androidx.lifecycle.MutableLiveData;
 
+import com.example.park21.models.Carro;
 import com.example.park21.models.Familia;
 import com.example.park21.models.Parqueadero;
 import com.example.park21.models.Usuario;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,6 +29,7 @@ public class Repository {
     private ArrayList<Parqueadero> dataSetParqueaderos = new ArrayList<>();
     private Usuario usuario;
     private Familia familia;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
     public static Repository getInstance(){
         if(instance == null){
@@ -36,11 +48,46 @@ public class Repository {
     }
 
     // Pretend to get data from a webservice or online source
+    public MutableLiveData<List<Carro>> getCarros(){
+        Carro carro1 = new Carro("abc 123");
+        Carro carro2 = new Carro("trt 456");
+        List<Carro> listaFamilia = new ArrayList<>();
+        listaFamilia.add(carro1);
+        listaFamilia.add(carro2);
+
+        MutableLiveData<List<Carro>> data = new MutableLiveData<>();
+        data.setValue(listaFamilia);
+        return data;
+    }
+
+    // Pretend to get data from a webservice or online source
     public MutableLiveData<Usuario> getUsuario(){
         usuario = new Usuario("Pepo Diaz","1136555582","1654651","skrrsk@pepo.com","52","Masculino","https://c1.staticflickr.com/5/4636/25316407448_de5fbf183d_o.jpg");
         MutableLiveData<Usuario> data = new MutableLiveData<>();
         data.setValue(usuario);
         return data;
+        //DocumentReference docRef = db.document("facturas/raHxKjOaVFYUY41zMaPW");
+        //docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            //@Override
+            //public void onSuccess(DocumentSnapshot documentSnapshot) {
+                //if (documentSnapshot.exists()){
+                    //Log.d("DebugUsuarioBefnombre:","Existe");
+                    //documentSnapshot.getString("fecha");
+
+                //}
+                //else Log.d("DebugUsuarioBefnombre:","no Existe");
+            //}
+        //}).addOnFailureListener(new OnFailureListener() {
+            //@Override
+            //public void onFailure(@NonNull Exception e) {
+
+            //}
+        //});
+        //Log.d("DebugUsuarioBefnombre:",usuario.getNombre());
+        //MutableLiveData<Usuario> data = new MutableLiveData<>();
+        //data.setValue(usuario);
+        //Log.d("DebugUsuario nombre:",data.getValue().getNombre());
+        //return data;
     }
 
     // Pretend to get data from a webservice or online source

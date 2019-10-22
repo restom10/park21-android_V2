@@ -22,7 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private static final String TAG = "RecyclerViewAdapter";
-
+    public static final String EXTRA_MESSAGE = "com.example.park21.MESSAGE";
     private List<Parqueadero> mNicePlaces = new ArrayList<>();
     private Context mContext;
 
@@ -60,6 +60,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             @Override
             public void onClick(View view) {
                 Intent a = new Intent(mContext,IngresarParqueaderoActivity.class);
+                String parqEscogido = mNicePlaces.get(i).getTitle().toString();
+                a.putExtra(EXTRA_MESSAGE,parqEscogido);
                 mContext.startActivity(a);
             }
         });

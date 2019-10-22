@@ -84,6 +84,14 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        verCarros.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent = new Intent(UserProfileActivity.this,
+                        VerCarrosActivity.class);
+                startActivity(myIntent);
+            }
+        });
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

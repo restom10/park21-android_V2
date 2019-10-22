@@ -10,11 +10,36 @@
         android:roundIcon="@mipmap/ic_launcher_logo_park21_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".VerCarrosActivity"
+            android:parentActivityName=".UserProfileActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.park21.UserProfileActivity" />
+        </activity>
+        <activity
+            android:name=".SalirParqActivity"
+            android:parentActivityName=".ParqueandoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.park21.ParqueandoActivity" />
+        </activity>
+        <activity
+            android:name=".SnapshotAutomovilActivity"
+            android:parentActivityName=".ParqueandoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.park21.ParqueandoActivity" />
+        </activity>
         <activity
             android:name=".ParqueandoActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme">
-        </activity>
+            android:theme="@style/AppTheme" />
         <activity
             android:name=".IngresarParqueaderoActivity"
             android:parentActivityName=".MainActivity"
