@@ -97,7 +97,7 @@
             <EditText android:id="@+id/input_edad"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
+                android:inputType="number"
                 android:hint="Edad" />
         </com.google.android.material.textfield.TextInputLayout>
 

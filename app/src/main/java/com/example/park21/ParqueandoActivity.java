@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 public class ParqueandoActivity extends AppCompatActivity {
 
-    CardView pagar, verCarro, salir, llegar;
-    String parqEscogido;
-    TextView textView;
+    private CardView pagar, verCarro, salir, llegar;
+    private String parqEscogido;
+    private TextView textView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +23,14 @@ public class ParqueandoActivity extends AppCompatActivity {
         textView.setText(parqEscogido);
 
         pagar = (CardView) findViewById(R.id.pagarParq);
+        pagar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ParqueandoActivity.this,
+                        PagarParqActivity.class);
+                startActivity(myIntent);
+            }
+        });
 
         verCarro = (CardView) findViewById(R.id.verCarro);
         verCarro.setOnClickListener(new View.OnClickListener() {

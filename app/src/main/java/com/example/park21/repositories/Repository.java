@@ -66,6 +66,7 @@ public class Repository {
         MutableLiveData<Usuario> data = new MutableLiveData<>();
         data.setValue(usuario);
         return data;
+
         //DocumentReference docRef = db.document("facturas/raHxKjOaVFYUY41zMaPW");
         //docRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             //@Override

@@ -15,6 +15,15 @@
     <string name="button_ver_carro">Ver carro en tiempo real</string>
     <string name="button_seguir_parquear">Seguir a parquear</string>
     <string name="button_salir_parquear">Salí del parqueadero</string>
+    <string name="button_pagar_pse">Pagar parqueadero PSE</string>
+    <string name="button_registrar_factura">Registrar factura</string>
+    <string name="button_tomar_foto">Toma foto a tu factura</string>
+    <string name="registrado">Vehículo registrado en el parqueadero:</string>
+    <string name="ubicacion">Ubicación del vehículo:</string>
+    <string name="ingreso">Hora de ingreso:</string>
+    <string name="hola">Paga tu parqueadero</string>
+    <string name="parqueadero">Valor del parqueadero:</string>
+    <string name="descuento">Descuento por facturas registradas:</string>
     <string name="no_internet">No tienes internet no puedes usar esta funcionalidad.</string>
     <string name="title_activity_settings">Settings</string>
 

@@ -10,7 +10,25 @@
         android:roundIcon="@mipmap/ic_launcher_logo_park21_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".VerCarrosActivity"
+        <activity android:name=".RegistrarFacturaActivity"
+            android:parentActivityName=".PagarParqActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.park21.PagarParqActivity" />
+        </activity>
+        <activity
+            android:name=".PagarParqActivity"
+            android:parentActivityName=".ParqueandoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme2">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.park21.ParqueandoActivity" />
+        </activity>
+        <activity
+            android:name=".VerCarrosActivity"
             android:parentActivityName=".UserProfileActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme2">
@@ -119,9 +137,9 @@
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
 </manifest>

@@ -78,7 +78,7 @@ public class SignupActivity extends AppCompatActivity {
         String edad = _edadText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
-
+        SaveSharedPreference.setUserName(SignupActivity.this,email);
         // TODO: Implement your own signup logic here.
 
         new android.os.Handler().postDelayed(
