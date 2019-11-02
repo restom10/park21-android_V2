@@ -11,13 +11,42 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <Button
+        android:id="@+id/buttonEliminarFamilia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="@string/button_eliminar_familia"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/recycler_view_family"
+        app:layout_constraintStart_toStartOf="@+id/recycler_view_family" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/UserEdit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_action_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.909"
+        app:layout_constraintStart_toEndOf="@+id/buttonEliminarFamilia"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.97" />
 
     <RelativeLayout
         android:id="@+id/relativeLayoutFamily"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="111dp">
+        app:layout_constraintBottom_toTopOf="@+id/buttonEliminarFamilia"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
 
         <ProgressBar
             android:id="@+id/progress_bar_family"

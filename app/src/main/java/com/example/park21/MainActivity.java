@@ -18,7 +18,10 @@ import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -64,9 +67,12 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.AppTheme);
-        //TODO revisar si ya esta metido el usuario
-        Intent intent = new Intent(this, LoginActivity.class);
-        startActivity(intent);
+
+        if(SaveSharedPreference.getUserName(MainActivity.this).length() == 0)
+        {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+        }
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -107,24 +113,6 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
             }
         });
 
-
-        mFab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mMainActivityViewModel.addNewValue(
-                        new Parqueadero(
-                                "https://i.imgur.com/ZcLLrkY.jpg",
-                                "Washington",
-                                "",
-                                "8",
-                                "",
-                                "4.723271",
-                                "-74.062304"
-                        )
-                );
-            }
-        });
-
         initRecyclerView();
 
         BottomNavigationView bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navigation);
@@ -148,8 +136,7 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
+     * This is where we can add markers or lines, add listeners or move the camera.
      * If Google Play services is not installed on the device, the user will be prompted to install
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
@@ -208,7 +195,7 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
     public void centreMapOnLocation(Location location, String title){
 
         LatLng userLocation = new LatLng(location.getLatitude(),location.getLongitude());
-        mMap.clear();
+        //mMap.clear();
         mMap.addMarker(new MarkerOptions().position(userLocation).title(title));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(userLocation,12));
 
@@ -271,5 +258,4 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
                 return super.onOptionsItemSelected(item);
         }
     }
-
 }

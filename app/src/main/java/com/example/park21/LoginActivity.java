@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity {
 
         String email = _emailText.getText().toString();
         String password = _passwordText.getText().toString();
-
+        SaveSharedPreference.setUserName(LoginActivity.this,email);
         // TODO: Implement your own authentication logic here.
 
         new android.os.Handler().postDelayed(
@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                         // onLoginFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 2000);
     }
 
 

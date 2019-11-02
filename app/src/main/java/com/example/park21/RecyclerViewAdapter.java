@@ -1,10 +1,12 @@
 package com.example.park21;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,7 +22,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private static final String TAG = "RecyclerViewAdapter";
-
+    public static final String EXTRA_MESSAGE = "com.example.park21.MESSAGE";
     private List<Parqueadero> mNicePlaces = new ArrayList<>();
     private Context mContext;
 
@@ -53,6 +55,16 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
                 .setDefaultRequestOptions(defaultOptions)
                 .load(mNicePlaces.get(i).getImageUrl())
                 .into(((ViewHolder)viewHolder).mImage);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent a = new Intent(mContext,IngresarParqueaderoActivity.class);
+                String parqEscogido = mNicePlaces.get(i).getTitle().toString();
+                a.putExtra(EXTRA_MESSAGE,parqEscogido);
+                mContext.startActivity(a);
+            }
+        });
     }
 
     @Override

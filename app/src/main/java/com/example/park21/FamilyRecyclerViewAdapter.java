@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.park21.models.Usuario;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +52,20 @@ public class FamilyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
                 .setDefaultRequestOptions(defaultOptions)
                 .load(mNicePlaces.get(i).getImagen())
                 .into(((FamilyRecyclerViewAdapter.ViewHolder)viewHolder).mImage);
+
+        viewHolder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), mNicePlaces.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        ((ViewHolder) viewHolder).botonDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(view.getContext(), "Vas a borrar a "+mNicePlaces.get(i).getNombre(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     @Override
@@ -61,11 +77,13 @@ public class FamilyRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView
 
         private CircleImageView mImage;
         private TextView mName;
+        private FloatingActionButton botonDelete;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             mImage = itemView.findViewById(R.id.image_family_member);
             mName = itemView.findViewById(R.id.family_member_name);
+            botonDelete = itemView.findViewById(R.id.DeleteMember);
         }
     }
 }

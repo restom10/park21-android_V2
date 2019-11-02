@@ -14,6 +14,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import com.example.park21.models.Parqueadero;
@@ -30,11 +31,11 @@ public class UserProfileActivity extends AppCompatActivity {
     private FloatingActionButton mFab;
     private Button verFamilia;
     private Button verCarros;
+    private Button guardar;
     private UserProfileActivityViewModel userViewModel;
     private RecyclerViewAdapter mAdapter;
     private EditText nombre;
     private EditText telefono;
-    private EditText genero;
     private EditText edad;
     private EditText cedula;
     private EditText correo;
@@ -52,6 +53,8 @@ public class UserProfileActivity extends AppCompatActivity {
         mFab = findViewById(R.id.UserEdit);
         verFamilia = findViewById(R.id.buttonFamilia);
         verCarros = findViewById(R.id.buttonVerCarros);
+        guardar = findViewById(R.id.guardarCambios);
+        guardar.setEnabled(false);
         userViewModel = ViewModelProviders.of(this).get(UserProfileActivityViewModel.class);
         userViewModel.init();
 
@@ -66,15 +69,12 @@ public class UserProfileActivity extends AppCompatActivity {
         correo.setEnabled(false);
         edad = (EditText) findViewById(R.id.editTextEdad);
         edad.setEnabled(false);
-        genero = (EditText) findViewById(R.id.editTextGenero);
-        genero.setEnabled(false);
 
         nombre.setText(userViewModel.getUsuario().getValue().getNombre());
         telefono.setText(userViewModel.getUsuario().getValue().getTelefono());
         cedula.setText(userViewModel.getUsuario().getValue().getCedula());
         correo.setText(userViewModel.getUsuario().getValue().getCorreo());
         edad.setText(userViewModel.getUsuario().getValue().getEdad());
-        genero.setText(userViewModel.getUsuario().getValue().getGenero());
 
         verFamilia.setOnClickListener(new View.OnClickListener() {
             public void onClick(View arg0) {
@@ -84,15 +84,34 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(myIntent);
             }
         });
+        verCarros.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View arg0) {
+
+                Intent myIntent = new Intent(UserProfileActivity.this,
+                        VerCarrosActivity.class);
+                startActivity(myIntent);
+            }
+        });
         mFab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                genero.setEnabled(true);
                 edad.setEnabled(true);
                 correo.setEnabled(true);
                 cedula.setEnabled(true);
                 telefono.setEnabled(true);
                 nombre.setEnabled(true);
+                guardar.setEnabled(true);
+            }
+        });
+        guardar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                guardar.setEnabled(false);
+                edad.setEnabled(false);
+                correo.setEnabled(false);
+                cedula.setEnabled(false);
+                telefono.setEnabled(false);
+                nombre.setEnabled(false);
             }
         });
 
@@ -108,7 +127,6 @@ public class UserProfileActivity extends AppCompatActivity {
         cedula = (EditText) findViewById(R.id.editTextCedula);
         correo = (EditText) findViewById(R.id.editTextCorreo);
         edad = (EditText) findViewById(R.id.editTextEdad);
-        genero = (EditText) findViewById(R.id.editTextGenero);
         String nombreM = nombre.getText().toString();
         String telefonoM = nombre.getText().toString();
         String cedulaM = nombre.getText().toString();

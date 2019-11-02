@@ -10,7 +10,7 @@
         android:id="@+id/imageProfile"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:src="@mipmap/ic_launcher"
+        android:src="@drawable/ic_action_profile"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +68,7 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="@string/edit_message"
+        android:hint="Nombre"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -76,25 +76,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.32999998" />
-
-    <EditText
-        android:id="@+id/editTextGenero"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:hint="@string/edit_message"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.397" />
 
     <EditText
         android:id="@+id/editTextEdad"
@@ -106,14 +87,14 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="@string/edit_message"
-        android:inputType="textPersonName"
+        android:hint="Edad"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.464" />
+        app:layout_constraintVertical_bias="0.41" />
 
     <EditText
         android:id="@+id/editTextCedula"
@@ -125,14 +106,14 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="@string/edit_message"
-        android:inputType="textPersonName"
+        android:hint="Cedula"
+        android:inputType="number"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.531" />
+        app:layout_constraintVertical_bias="0.502" />
 
     <EditText
         android:id="@+id/editTextCorreo"
@@ -144,14 +125,14 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="@string/edit_message"
-        android:inputType="textPersonName"
+        android:hint="Correo"
+        android:inputType="textEmailAddress"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.598" />
+        app:layout_constraintVertical_bias="0.586" />
 
     <EditText
         android:id="@+id/editTextTelefono"
@@ -163,8 +144,8 @@
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
         android:ems="10"
-        android:hint="@string/edit_message"
-        android:inputType="textPersonName"
+        android:hint="Teléfono"
+        android:inputType="phone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -172,6 +153,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.665" />
 
+    <Button
+        android:id="@+id/guardarCambios"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Guardar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.532"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.761" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

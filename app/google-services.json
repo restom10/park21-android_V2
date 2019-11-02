@@ -1,50 +1,35 @@
 {
   "project_info": {
-    "project_number": "916396314863",
-    "firebase_url": "https://park-21.firebaseio.com",
-    "project_id": "park-21",
-    "storage_bucket": "park-21.appspot.com"
+    "project_number": "98867589940",
+    "firebase_url": "https://android-park21.firebaseio.com",
+    "project_id": "android-park21",
+    "storage_bucket": "android-park21.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:916396314863:android:183c7ce25bf0209e730b1a",
+        "mobilesdk_app_id": "1:98867589940:android:b6209231b6897884da2b61",
         "android_client_info": {
           "package_name": "com.example.park21"
         }
       },
       "oauth_client": [
         {
-          "client_id": "916396314863-o6noedu5q5fec3p2oct5vrr4oghngtbo.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.park21",
-            "certificate_hash": "874b1ca704f874918cd919e7af216848185416f6"
-          }
-        },
-        {
-          "client_id": "916396314863-qe2j0ii3j011tlkcklkk1oqsg76j78k8.apps.googleusercontent.com",
+          "client_id": "98867589940-qts029hbsqtmiat4srca7l7udbld7fdp.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBCCqnr10rIY9hjftbNFM1aIFnnlhH1j3g"
+          "current_key": "AIzaSyCR8-9-H6aoL-JXzuGWl6zyyXp2BsDUpsc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "916396314863-qe2j0ii3j011tlkcklkk1oqsg76j78k8.apps.googleusercontent.com",
+              "client_id": "98867589940-qts029hbsqtmiat4srca7l7udbld7fdp.apps.googleusercontent.com",
               "client_type": 3
-            },
-            {
-              "client_id": "916396314863-ksrfut4ruhf2mc6ekdt22utv3v6br8dl.apps.googleusercontent.com",
-              "client_type": 2,
-              "ios_info": {
-                "bundle_id": "TEAM16-PARK21.Park21"
-              }
             }
           ]
         }
