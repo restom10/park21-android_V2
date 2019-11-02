@@ -27,6 +27,12 @@
     <string name="no_internet">No tienes internet no puedes usar esta funcionalidad.</string>
     <string name="title_activity_settings">Settings</string>
 
+    <string-array name="gender">
+        <item>Masculino</item>
+        <item>Femenino</item>
+        <item>Otro</item>
+    </string-array>
+
     <!-- Preference Titles -->
     <string name="messages_header">Messages</string>
     <string name="sync_header">Sync</string>

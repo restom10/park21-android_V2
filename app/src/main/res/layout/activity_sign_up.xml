@@ -76,17 +76,31 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <!-- Gender -->
-        <com.google.android.material.textfield.TextInputLayout
+        <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp">
-            <EditText android:id="@+id/input_genero"
-                android:layout_width="match_parent"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+            <RadioButton android:id="@+id/radio_Masculino"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:hint="Género" />
-        </com.google.android.material.textfield.TextInputLayout>
+                android:text="Masculino"
+                android:onClick="onRadioButtonClicked"/>
+
+            <RadioButton
+                android:id="@+id/radio_Femenino"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="onRadioButtonClicked"
+                android:text="Femenino" />
+
+            <RadioButton android:id="@+id/radio_otro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Otro"/>
+        </RadioGroup>
+
 
         <!-- Age -->
         <com.google.android.material.textfield.TextInputLayout

@@ -9,6 +9,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,12 +23,18 @@ public class SignupActivity extends AppCompatActivity {
     @BindView(R.id.input_cedula) EditText _cedulaText;
     @BindView(R.id.input_email) EditText _emailText;
     @BindView(R.id.input_mobile) EditText _mobileText;
-    @BindView(R.id.input_genero) EditText _genderText;
+
+    @BindView(R.id.radio_Femenino) RadioButton _Femenino;
+    @BindView(R.id.radio_Masculino) RadioButton _Masculino;
+    @BindView(R.id.radio_otro) RadioButton _Otro;
+
     @BindView(R.id.input_edad) EditText _edadText;
     @BindView(R.id.input_password) EditText _passwordText;
     @BindView(R.id.input_reEnterPassword) EditText _reEnterPasswordText;
     @BindView(R.id.btn_signup) Button _signupButton;
     @BindView(R.id.link_login) TextView _loginLink;
+
+    String generoE;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,6 +61,33 @@ public class SignupActivity extends AppCompatActivity {
         });
     }
 
+    public void onRadioButtonClicked(View view) {
+        // Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+
+        // Check which radio button was clicked
+        switch(view.getId()) {
+            case R.id.radio_Masculino:
+                if (checked)
+                    _Femenino.setEnabled(false);
+                    _Otro.setEnabled(false);
+                    generoE = "Masculino";
+                    break;
+            case R.id.radio_Femenino:
+                if (checked)
+                    _Masculino.setEnabled(false);
+                    _Otro.setEnabled(false);
+                    generoE = "Femenino";
+                    break;
+            case R.id.radio_otro:
+                if (checked)
+                    _Femenino.setEnabled(false);
+                    _Masculino.setEnabled(false);
+                    generoE = "Otro";
+                    break;
+        }
+    }
+
     public void signup() {
         Log.d(TAG, "Signup");
 
@@ -74,7 +108,7 @@ public class SignupActivity extends AppCompatActivity {
         String address = _cedulaText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
-        String genero = _genderText.getText().toString();
+        String genero = generoE;
         String edad = _edadText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
@@ -113,7 +147,6 @@ public class SignupActivity extends AppCompatActivity {
         String address = _cedulaText.getText().toString();
         String email = _emailText.getText().toString();
         String mobile = _mobileText.getText().toString();
-        String genero = _genderText.getText().toString();
         String edad = _edadText.getText().toString();
         String password = _passwordText.getText().toString();
         String reEnterPassword = _reEnterPasswordText.getText().toString();
@@ -145,13 +178,6 @@ public class SignupActivity extends AppCompatActivity {
             valid = false;
         } else {
             _mobileText.setError(null);
-        }
-
-        if (genero.isEmpty()) {
-            _genderText.setError("Ingresa un género válido");
-            valid = false;
-        } else {
-            _genderText.setError(null);
         }
 
         if (edad.isEmpty()) {
