@@ -19,6 +19,8 @@ public class Repository {
     private Usuario usuario;
     private Familia familia;
 
+
+
     public static Repository getInstance(){
         if(instance == null){
             instance = new Repository();

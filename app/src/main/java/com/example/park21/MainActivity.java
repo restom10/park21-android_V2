@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity  implements OnMapReadyCallba
 
     private static final String TAG = "MainActivity";
 
+
     // Try to obtain the map from the SupportMapFragment.
     private GoogleMap mMap;
     LocationManager locationManager;
